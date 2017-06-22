@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <textarea rows="" cols="" id="editor1">
+     This is my textarea to be replaced with CKEditor.
+  </textarea>
+
+  <script src="./ckeditor/ckeditor.js"></script>
+  <script>
+    // 富文本编辑器
+    // ckeditor
+
+    // 注意： ckeditor是一个非模块化的库，如果要配合 requirejs 来使用，那么
+    //       需要在 requirejs 中做一个配置！
+    //       requirejs 中 可以通过 exports 配置，来将一个非模块化的库，转化为
+    //       模块化的库
+
+    // 第一个参数：textarea 的id
+    // 第二个参数：配置项
+    CKEDITOR.replace('editor1', {
+      // 工具栏
+      toolbarGroups: [
+        { name: 'document', groups: ['mode', 'document', 'doctools'] },
+        { name: 'clipboard', groups: ['clipboard', 'undo'] },
+        { name: 'editing', groups: ['find', 'selection', 'spellchecker'] },
+        { name: 'forms' }
+      ],
+
+      skin: 'moono-lisa'
+    });
+  </script>
+</body>
+
+</html>
